@@ -1,0 +1,40 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Particle', 'ppm'],
+          ['SO2',     123],
+          ['NO2',     324],
+          ['CO',     253],
+          ['O3',     124],
+        ]);
+
+        var options = {
+          pieHole: 0.5,
+          pieSliceTextStyle: {
+            color: 'black',
+          },
+          legend: 'none',
+          'width':360,
+          'height':224,
+           backgroundColor: {
+          'fill': '#00000000',
+          'fillOpacity': 0.0
+          },
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+<div id="donut_single" style="width: 224px; height: 224px;"></div>
+</body>
+</html>
